@@ -6,9 +6,16 @@ Plataforma E-learning
 EduPortal: Plataforma de Gestión Educativa Ética y Legal
 
 📝 DESCRIPCIÓN BREVE:
-Plataforma digital educativa 
+Plataforma digital educativa: El propósito del sistema de EduPortal es brindar una plataforma digital de gestión educativa que facilite el acceso diferenciado a información según el rol de cada usuario (alumno, docente o administrador). Buscar mejorar la organización académica y administrativa mediante procesos centralizados, seguros y fáciles de usar.
+
+📝 ALCANCE:
+
+Usuarios estándar (alumnos/docentes): podrán consultar sus datos personales, inscribirse en materias y acceder a calificaciones.
+Administradores: tendrán la capacidad de gestionar usuarios (altas, bajas modificaciones, cambio de roles), crear cursos, asignar docentes y generar reportes académicos.
+El sistema será inicialmente de uso interno, con posibilidad de expandirse a aplicación web accesible desde cualquier dispositivo.
 
 🚀 FUNCIONALIDADES INICIALES:
+
 
 ✅ Gestión segura de datos escolares
 📚 Biblioteca con control de derechos de autor
@@ -23,6 +30,7 @@ Plataforma digital educativa
 👩 Guadalupe Aravena
 👦 Danilo Oviedo
 👦 Nahuel Cufre
+
 ➕ [Agregar más integrantes]
 
 🛠️ HABILIDADES TÉCNICAS:
