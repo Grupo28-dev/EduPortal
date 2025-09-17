@@ -4,131 +4,192 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Cursos</title>
-        <!-- Google Fonts & Material Symbols -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <title>Inicio</title>
+        <link rel="stylesheet" href="../css/cursos.css">
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     </head>
 
-    <!-- HEADER -->
-    <header class="bg-dark text-white py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <img src="../assets/logo-EduPortal.png" alt="Logo_Eduportal" >
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a href="../index.html" class="nav-link text-white">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./cursos.html" class="nav-link text-white">Cursos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Estudiantes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Profesores</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white">Contacto</a>
-                    </li>
-                </ul>
-            </nav>
-            <!-- Botón con modal -->
-            <button id="btnLogin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
-                Iniciar sesión
-            </button>
-        </div>
-    </header>
+    <body class="d-flex flex-column min-vh-100"> <!-- CAMBIO AQUÍ -->
 
-    <main class="container my-5"> 
-        <section class="container py-5">
-            <h2 class="text-capitalize mb-5 fs-2 fw-bold">
-                leading companies<br />have trusted us
-            </h2>
-        
-            <div class="row g-4">
+        <!-- HEADER -->
+        <header class="bg-dark text-white py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h1 class="h4 m-0">LOGO</h1>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link text-white">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./cursos.html" class="nav-link text-white">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white">Estudiantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white">Profesores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-white">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Botón con modal -->
+                <button id="btnLogin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Iniciar sesión
+                </button>
+            </div>
+        </header>
+
+        <!-- MAIN -->
+        <main class="container flex-grow-1"> <!-- CAMBIO AQUÍ -->
+            <!-- Banner con gradiente -->
+            <section class="hero-banner text-white d-flex align-items-center justify-content-center text-center">
+                <div class="container">
+                    <h2 class="display-4 fw-bold">CURSOS</h2>
+                    <p class="lead">Explorá los contenidos y aprendé a tu ritmo</p>
+                </div>
+            </section>
+
+            <!-- Sección Cursos -->
+            <div id="cursosSection" class="row g-4">
+                <!-- Cards de cursos -->
                 <!-- Card 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow-sm">
-                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
-                            <img src="https://images.unsplash.com/photo-1601049676869-702ea24cfd58?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="w-100 h-100 object-fit-cover" alt="Trust & Co." />
-                            <a href="#"
-                                class="position-absolute bottom-0 end-0 m-2 bg-warning rounded-circle d-flex justify-content-center align-items-center"
-                                style="width: 60px; height: 60px;">
-                                <span class="material-symbols-outlined text-white">arrow_outward</span>
-                            </a>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/html-css.jpg" alt="Curso HTML y CSS"
+                                class="img-fluid w-100 h-100 object-fit-cover">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-capitalize">trust &amp; co.</h3>
-                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
-                                experts</p>
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
-                                    branding</li>
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #70b3b1;">
-                                    packaging</li>
-                            </ul>
+                            <h5 class="card-title">Curso de HTML y CSS</h5>
+                            <p class="card-text">
+                                Aprendé a maquetar páginas web modernas desde cero.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
                         </div>
                     </div>
                 </div>
-        
                 <!-- Card 2 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow-sm">
-                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
-                            <img src="https://images.unsplash.com/photo-1613235788366-270e7ac489f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="w-100 h-100 object-fit-cover" alt="Tonic" />
-                            <a href="#"
-                                class="position-absolute bottom-0 end-0 m-2 bg-info rounded-circle d-flex justify-content-center align-items-center"
-                                style="width: 60px; height: 60px;">
-                                <span class="material-symbols-outlined text-white">arrow_outward</span>
-                            </a>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/JavaScript.png" alt="Curso JavaScript"
+                                class="img-fluid w-100 h-100 object-fit-cover">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-capitalize">tonic</h3>
-                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
-                                experts</p>
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
-                                    branding</li>
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d05fa2;">
-                                    marketing</li>
-                            </ul>
+                            <h5 class="card-title">JavaScript Básico</h5>
+                            <p class="card-text">
+                                Domina las bases de JS para crear sitios interactivos.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
                         </div>
                     </div>
                 </div>
-        
                 <!-- Card 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card border-0 shadow-sm">
-                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
-                            <img src="https://images.unsplash.com/photo-1673847401561-fcd75a7888c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                                class="w-100 h-100 object-fit-cover" alt="Shower Gel" />
-                            <a href="#"
-                                class="position-absolute bottom-0 end-0 m-2 bg-danger rounded-circle d-flex justify-content-center align-items-center"
-                                style="width: 60px; height: 60px;">
-                                <span class="material-symbols-outlined text-white">arrow_outward</span>
-                            </a>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/react.png" alt="Curso React"
+                                class="img-fluid w-100 h-100 object-fit-cover">
                         </div>
                         <div class="card-body">
-                            <h3 class="card-title text-capitalize">shower gel</h3>
-                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
-                                experts</p>
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
-                                    branding</li>
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #70b3b1;">
-                                    packaging</li>
-                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d05fa2;">
-                                    marketing</li>
-                            </ul>
+                            <h5 class="card-title">React para Principiantes</h5>
+                            <p class="card-text">
+                                Construí aplicaciones web dinámicas con React.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/python.png" alt="Curso Python"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Python desde Cero</h5>
+                            <p class="card-text">
+                                Introducción al lenguaje más popular para data y web.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/mysql.png" alt="Curso MySQL"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Bases de Datos MySQL</h5>
+                            <p class="card-text">
+                                Aprendé a modelar y consultar datos con SQL.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <div class="card-img-top bg-light" style="height: 160px; overflow: hidden;">
+                            <img src="../assets/img/github.jpg" alt="Curso Git y GitHub"
+                                class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Git y GitHub</h5>
+                            <p class="card-text">
+                                Gestioná tus proyectos y colaborá en equipo.
+                            </p>
+                            <a href="#" class="btn btn-sm btn-primary">+ Info</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </main>
 
-    </main>
+        <!-- FOOTER -->
+        <footer class="bg-dark text-white text-center py-3">
+            © 2025 – Todos los derechos reservados
+        </footer>
+
+        <!-- MODAL LOGIN -->
+        <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com"
+                                    required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="password" placeholder="********"
+                                    required>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS + tu JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/main.js"></script>
+
+    </body>
+
+</html>
