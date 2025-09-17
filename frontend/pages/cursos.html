@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Cursos</title>
+        <!-- Google Fonts & Material Symbols -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+    <!-- HEADER -->
+    <header class="bg-dark text-white py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <img src="../assets/logo-EduPortal.png" alt="Logo_Eduportal" >
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link text-white">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./cursos.html" class="nav-link text-white">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">Estudiantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">Profesores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-white">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Botón con modal -->
+            <button id="btnLogin" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Iniciar sesión
+            </button>
+        </div>
+    </header>
+
+    <main class="container my-5"> 
+        <section class="container py-5">
+            <h2 class="text-capitalize mb-5 fs-2 fw-bold">
+                leading companies<br />have trusted us
+            </h2>
+        
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
+                            <img src="https://images.unsplash.com/photo-1601049676869-702ea24cfd58?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="w-100 h-100 object-fit-cover" alt="Trust & Co." />
+                            <a href="#"
+                                class="position-absolute bottom-0 end-0 m-2 bg-warning rounded-circle d-flex justify-content-center align-items-center"
+                                style="width: 60px; height: 60px;">
+                                <span class="material-symbols-outlined text-white">arrow_outward</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">trust &amp; co.</h3>
+                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
+                                experts</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
+                                    branding</li>
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #70b3b1;">
+                                    packaging</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
+                            <img src="https://images.unsplash.com/photo-1613235788366-270e7ac489f3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="w-100 h-100 object-fit-cover" alt="Tonic" />
+                            <a href="#"
+                                class="position-absolute bottom-0 end-0 m-2 bg-info rounded-circle d-flex justify-content-center align-items-center"
+                                style="width: 60px; height: 60px;">
+                                <span class="material-symbols-outlined text-white">arrow_outward</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">tonic</h3>
+                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
+                                experts</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
+                                    branding</li>
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d05fa2;">
+                                    marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm">
+                        <div class="position-relative overflow-hidden rounded-4" style="height: 300px;">
+                            <img src="https://images.unsplash.com/photo-1673847401561-fcd75a7888c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                class="w-100 h-100 object-fit-cover" alt="Shower Gel" />
+                            <a href="#"
+                                class="position-absolute bottom-0 end-0 m-2 bg-danger rounded-circle d-flex justify-content-center align-items-center"
+                                style="width: 60px; height: 60px;">
+                                <span class="material-symbols-outlined text-white">arrow_outward</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title text-capitalize">shower gel</h3>
+                            <p class="card-text text-muted">Fill out the form and the algorithm will offer the right team of
+                                experts</p>
+                            <ul class="list-inline mb-0">
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d3b19a;">
+                                    branding</li>
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #70b3b1;">
+                                    packaging</li>
+                                <li class="list-inline-item text-uppercase fw-bold badge" style="background-color: #d05fa2;">
+                                    marketing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
