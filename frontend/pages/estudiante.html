@@ -134,9 +134,21 @@
         isValid = validateField(document.getElementById('alumnoNombre')) && isValid;
         isValid = validateField(document.getElementById('alumnoApellido')) && isValid;
         isValid = validateField(document.getElementById('alumnoTelefono')) && isValid;
-        isValid = validateField(document.getElementById('alumnoFechaNacimiento')) && isValid;
         isValid = validateField(document.getElementById('alumnoMatricula')) && isValid;
         isValid = validateField(document.getElementById('alumnoCarrera')) && isValid;
+
+        // Validación de Fecha de Nacimiento
+        const fechaNacimientoField = document.getElementById('alumnoFechaNacimiento');
+        const fechaNacimientoFeedback = fechaNacimientoField.nextElementSibling;
+        if (!validateField(fechaNacimientoField)) {
+            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento es obligatoria.';
+            isValid = false;
+        } else if (new Date(fechaNacimientoField.value) > new Date()) {
+            fechaNacimientoField.classList.remove('is-valid');
+            fechaNacimientoField.classList.add('is-invalid');
+            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento no puede ser futura.';
+            isValid = false;
+        }
 
         // Validación de Email
         const emailField = document.getElementById('alumnoEmail');
