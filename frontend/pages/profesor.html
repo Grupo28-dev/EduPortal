@@ -1,69 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Profesor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <H1>Formulario de registro de Profesor</H1>
-
-<div class="card p-4 mb-4" style="max-width: 600px; margin: auto;">
-  <h2 class="text-center mb-4">👨‍🏫 Registro de Profesor</h2>
-  
-  <form>
-    <div class="mb-3">
-      <label for="profesorNombre" class="form-label">👤 Nombre</label>
-      <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre">
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="header-principal py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none">
+        <img src="../assets/img/logo-EduPortal.png" 
+         alt="Logo EduPortal" 
+         class="img-fluid" 
+         style="height: 120px; width: auto;">
+       </a>
+      <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link text-white">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./cursos.html" class="nav-link text-white">Cursos</a>
+            </li>
+            <li class="nav-item">
+              <a href="./estudiante.html" class="nav-link text-white">Estudiantes</a>
+            </li>
+            <li class="nav-item">
+              <a href="./profesor.html" class="nav-link text-white">Profesores</a>
+            </li>
+            <li class="nav-item">
+              <a href="./contacto.html" class="nav-link text-white">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        <button id="btnLogin" class="btn btn-acento" data-bs-toggle="modal" data-bs-target="#loginModal">
+          Iniciar sesión
+        </button>
     </div>
+  </header>
 
-    <div class="mb-3">
-      <label for="profesorApellido" class="form-label">📝 Apellido</label>
-      <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido">
+  <!-- Main -->
+  <main class="container my-5 flex-grow-1">
+    <div class="card p-4 mb-4" style="max-width: 600px; margin: auto;">
+      <h2 class="text-center mb-4">👨‍🏫 Registro de Profesor</h2>
+      
+      <form>
+        <div class="mb-3">
+          <label for="profesorNombre" class="form-label">👤 Nombre</label>
+          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorApellido" class="form-label">📝 Apellido</label>
+          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorEmail" class="form-label">📧 Email</label>
+          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorTelefono" class="form-label">📱 Teléfono</label>
+          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="profesorFechaNacimiento">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorEspecialidad" class="form-label">🧩 Especialidad</label>
+          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorTitulo" class="form-label">🎓 Título</label>
+          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorDepartamento" class="form-label">🏢 Departamento</label>
+          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorCategoria" class="form-label">💼 Categoría</label>
+          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría">
+        </div>
+
+        <div class="mb-3">
+          <label for="profesorFechaContrato" class="form-label">📅 Fecha de Contrato</label>
+          <input type="date" class="form-control" id="profesorFechaContrato">
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">✅ Registrar Profesor</button>
+      </form>
     </div>
+  </main>
 
-    <div class="mb-3">
-      <label for="profesorEmail" class="form-label">📧 Email</label>
-      <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email">
-    </div>
+  <!-- Footer -->
+  <footer class="footer-principal text-center py-3">
+    <p>© 2025 – Todos los derechos reservados</p>
+  </footer>
 
-    <div class="mb-3">
-      <label for="profesorTelefono" class="form-label">📱 Teléfono</label>
-      <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="profesorFechaNacimiento">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorEspecialidad" class="form-label">🧩 Especialidad</label>
-      <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorTitulo" class="form-label">🎓 Título</label>
-      <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorDepartamento" class="form-label">🏢 Departamento</label>
-      <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorCategoria" class="form-label">💼 Categoría</label>
-      <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría">
-    </div>
-
-    <div class="mb-3">
-      <label for="profesorFechaContrato" class="form-label">📅 Fecha de Contrato</label>
-      <input type="date" class="form-control" id="profesorFechaContrato">
-    </div>
-
-    <button type="submit" class="btn btn-success w-100">✅ Registrar Profesor</button>
-  </form>
-</div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

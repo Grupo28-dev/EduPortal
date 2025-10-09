@@ -10,11 +10,11 @@
       rel="stylesheet"
     />
     <!-- Tu CSS -->
-    <link rel="stylesheet" href="css/estilo_inicio.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <!-- HEADER -->
-    <header class="bg-dark text-white py-3">
+    <header class="header-principal py-3">
       <div class="container d-flex justify-content-between align-items-center">
         <a href="./index.html" class="d-flex align-items-center text-decoration-none">
           <img src="./assets/img/logo-EduPortal.png" 
@@ -31,10 +31,10 @@
               <a href="./pages/cursos.html" class="nav-link text-white">Cursos</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-white">Estudiantes</a>
+              <a href="./pages/estudiante.html" class="nav-link text-white">Estudiantes</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-link text-white">Profesores</a>
+              <a href="./pages/profesor.html" class="nav-link text-white">Profesores</a>
             </li>
             <li class="nav-item">
               <a href="./pages/contacto.html" class="nav-link text-white">Contacto</a>
@@ -44,7 +44,7 @@
         <!-- Botón con modal -->
         <button 
           id="btnLogin"
-          class="btn btn-warning" 
+          class="btn btn-acento" 
           data-bs-toggle="modal" 
           data-bs-target="#loginModal">
           Iniciar sesión
@@ -67,7 +67,7 @@
         <!-- Card 1 -->
         <div class="col-md-4">
           <div class="card h-100">
-              <img src="./assets/img/html-css.jpg" style="height: 460px" class="card-img-top img-fluid" alt="Curso de HTML y CSS">            <div class="card-body">
+              <img src="./assets/img/html-css.jpg" class="card-img-top" alt="Curso de HTML y CSS">            <div class="card-body">
               <h5 class="card-title">Curso de HTML y CSS</h5>
               <p class="card-text">
                 Aprendé a maquetar páginas web modernas desde cero.
@@ -79,7 +79,7 @@
         <!-- Card 2 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="./assets/img/JavaScript.png" style="height: 460px" class="card-img-top img-fluid" alt="Curso de JS">
+            <img src="./assets/img/JavaScript.png" class="card-img-top" alt="Curso de JS">
             <div class="card-body">
               <h5 class="card-title">JavaScript Básico</h5>
               <p class="card-text">
@@ -92,7 +92,7 @@
         <!--Card 3 -->
         <div class="col-md-4">
           <div class="card h-100">
-             <img src="./assets/img/react.png" style="height: 460px" class="card-img-top img-fluid" alt="Curso de React">
+             <img src="./assets/img/react.png" class="card-img-top" alt="Curso de React">
             <div class="card-body">
               <h5 class="card-title">React para Principiantes</h5>
               <p class="card-text">
@@ -105,7 +105,7 @@
         <!-- Card 4 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="./assets/img/python.png" style="height: 460px" class="card-img-top img-fluid" alt="Curso de Python">
+            <img src="./assets/img/python.png" class="card-img-top" alt="Curso de Python">
             <div class="card-body">
               <h5 class="card-title">Python desde Cero</h5>
               <p class="card-text">
@@ -118,7 +118,7 @@
         <!-- Card 5 -->
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="./assets/img/mysql.png" style="height: 460px" class="card-img-top img-fluid" alt="Curso de MySql">
+            <img src="./assets/img/mysql.png" class="card-img-top" alt="Curso de MySql">
             <div class="card-body">
               <h5 class="card-title">Bases de Datos MySQL</h5>
               <p class="card-text">
@@ -131,7 +131,7 @@
         <!-- Card 6 -->
         <div class="col-md-4">
           <div class="card h-100">
-             <img src="./assets/img/github.jpg" class="card-img-top img-fluid" alt="Curso de GitHub">
+             <img src="./assets/img/github.jpg" class="card-img-top" alt="Curso de GitHub">
             <div class="card-body">
               <h5 class="card-title">Git y GitHub</h5>
               <p class="card-text">
@@ -147,7 +147,7 @@
       <div id="profesoresSection" class="row g-4 d-none">
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="./assets/img/juanPerez.webp" style="height: 460px" class="card-img-top img-fluid" alt="Profesor Juan Pérez">
+            <img src="./assets/img/juanPerez.webp" class="card-img-top" alt="Profesor Juan Pérez">
             <div class="card-body">
               <h5 class="card-title">Juan Pérez</h5>
               <p class="card-text">Especialista en Python y Django, apasionado por la enseñanza.</p>
@@ -157,7 +157,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-             <img src="./assets/img/lauraFernandez.jpg" style="height: 460px" class="card-img-top img-fluid" alt="Profesor Laura Fernández">
+             <img src="./assets/img/lauraFernandez.jpg" class="card-img-top" alt="Profesor Laura Fernández">
             <div class="card-body">
               <h5 class="card-title">Laura Fernández</h5>
               <p class="card-text">Ingeniera en sistemas, experta en bases de datos.</p>
@@ -167,7 +167,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-             <img src="./assets/img/carlosRamirez.webp" style="height: 460px" class="card-img-top img-fluid" alt="Profesor Carlos Ramírez">
+             <img src="./assets/img/carlosRamirez.webp" class="card-img-top" alt="Profesor Carlos Ramírez">
             <div class="card-body">
               <h5 class="card-title">Carlos Ramírez</h5>
               <p class="card-text">Full Stack Developer con experiencia en proyectos internacionales.</p>
@@ -177,7 +177,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-            <img src="./assets/img/anaLopez.jpg" style="height: 460px" class="card-img-top img-fluid" alt="Profesor Ana López">
+            <img src="./assets/img/anaLopez.jpg" class="card-img-top" alt="Profesor Ana López">
             <div class="card-body">
               <h5 class="card-title">Ana López</h5>
               <p class="card-text">Docente universitaria, especialista en Git y metodologías ágiles</p>
@@ -187,7 +187,7 @@
         </div>
         <div class="col-md-4">
           <div class="card h-100">
-             <img src="./assets/img/pedroTorres.jpg" style="height: 460px" class="card-img-top img-fluid" alt="Profesor Pedro Torres">
+             <img src="./assets/img/pedroTorres.jpg" class="card-img-top" alt="Profesor Pedro Torres">
             <div class="card-body">
               <h5 class="card-title">Pedro Torres</h5>
               <p class="card-text">Programador backend y mentor de jóvenes desarrolladores.</p>
@@ -200,8 +200,8 @@
 
 
     <!-- FOOTER -->
-    <footer class="bg-dark text-white text-center py-3">
-      © 2025 – Todos los derechos reservados
+    <footer class="footer-principal text-center py-3">
+      <p>© 2025 – Todos los derechos reservados</p>
     </footer>
 
     <!-- MODAL LOGIN -->

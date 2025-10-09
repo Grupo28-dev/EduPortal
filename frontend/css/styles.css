@@ -1,0 +1,101 @@
+/* ==================
+   VARIABLES DE COLOR Y ESTILOS GENERALES
+   ================== */
+:root {
+    --color-primario: #0d6efd; /* Azul principal de Bootstrap */
+    --color-secundario: #032b57; /* Azul oscuro para header/footer */
+    --color-acento: #5cb3ff;   /* Azul claro para acentos y hovers */
+    --color-texto-claro: #ffffff;
+    --color-fondo-claro: #f8f9fa;
+    --color-texto-oscuro: #333;
+}
+
+/* ==================
+   ESTILOS GENERALES
+   ================== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--color-fondo-claro);
+    color: var(--color-texto-oscuro);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1 0 auto;
+    /* Que el main crezca para ocupar el espacio disponible */
+}
+footer {
+    flex-shrink: 0;
+    /* Footer no se achica */
+}
+
+/* ==================
+   HEADER / NAVBAR
+   ================== */
+.header-principal, .footer-principal {
+    background-color: var(--color-secundario);
+    color: var(--color-texto-claro);
+}
+
+.nav-link {
+  transition: all 0.3s ease-in-out;
+}
+.nav-link:hover {
+  background-color: var(--color-acento);
+  color: var(--color-secundario) !important;
+  border-radius: 9px;
+  box-shadow: 0 0 12px rgba(92, 179, 255, 0.7); 
+}
+
+/* ==================
+   BOTONES
+   ================== */
+.btn-acento {
+    background-color: var(--color-acento);
+    color: var(--color-secundario);
+    border: none;
+}
+/* ==================
+   PÁGINA DE CURSOS
+   ================== */
+.hero-banner {
+    height: 300px;
+    background: linear-gradient(90deg, var(--color-primario) 0%, var(--color-acento) 100%);
+    margin-bottom: 60px;
+}
+
+/* ==================
+   TARJETAS (CURSOS Y PROFESORES)
+   ================== */
+.card-img-top {
+    height: 250px; /* Altura unificada para las imágenes de las tarjetas */
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+}
+
+/* ==================
+   PÁGINA DE CONTACTO
+   ================== */
+.formulario-contacto h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-secundario);
+}
+
+/* ==================
+   FOOTER
+   ================== */
+.footer-principal p {
+    margin: 0;
+}
