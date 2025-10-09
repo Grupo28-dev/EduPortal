@@ -48,20 +48,29 @@
       <h2>Contacto</h2>
 
       <!-- Formulario real -->
-      <form id="contactForm">
+      <form id="contactForm" novalidate>
         <div class="mb-3">
           <label for="name" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez" required>
+          <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez">
+          <div class="invalid-feedback">
+            Por favor, ingresa tu nombre.
+          </div>
         </div>
 
         <div class="mb-3">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Ej: juan.perez@correo.com" required>
+          <input type="email" class="form-control" id="email" placeholder="Ej: juan.perez@correo.com">
+          <div class="invalid-feedback">
+            Por favor, ingresa un correo electrónico válido.
+          </div>
         </div>
 
         <div class="mb-3">
           <label for="message" class="form-label">Tu consulta</label>
-          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta aquí..." required></textarea>
+          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta aquí..."></textarea>
+          <div class="invalid-feedback">
+            Por favor, escribe tu consulta.
+          </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Enviar</button>
@@ -106,21 +115,55 @@
   <!-- Script: espera a que cargue el DOM -->
   <script>
     document.addEventListener("DOMContentLoaded", function() {
-      const form = document.getElementById('contactForm');
-      const thankYouMessage = document.getElementById('thankYouMessage');
-
-      form.addEventListener('submit', function(event) {
-        // Previene el comportamiento por defecto del formulario (que es recargar la página)
+      const contactForm = document.getElementById('contactForm');
+      
+      contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
+        event.stopPropagation();
 
-        // Aquí es donde normalmente enviarías los datos del formulario a un servidor.
-        // Por simplicidad, este ejemplo solo oculta el formulario y muestra un mensaje.
+        let isValid = true;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        // Oculta el formulario
-        form.style.display = 'none';
+        // Resetear validaciones previas
+        contactForm.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        contactForm.querySelectorAll('.is-valid').forEach(el => el.classList.remove('is-valid'));
 
-        // Muestra el mensaje de agradecimiento
-        thankYouMessage.style.display = 'block';
+        // Campos a validar
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+
+        // Validación de Nombre
+        if (name.value.trim() === '') {
+          name.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          name.classList.add('is-valid');
+        }
+
+        // Validación de Email
+        if (!emailRegex.test(email.value)) {
+          email.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          email.classList.add('is-valid');
+        }
+
+        // Validación de Mensaje
+        if (message.value.trim() === '') {
+          message.classList.add('is-invalid');
+          isValid = false;
+        } else {
+          message.classList.add('is-valid');
+        }
+
+        if (isValid) {
+          // Si todo es válido, oculta el formulario y muestra el mensaje
+          contactForm.style.display = 'none';
+          document.getElementById('thankYouMessage').style.display = 'block';
+          // Aquí iría la lógica para enviar el formulario al backend
+          console.log('Formulario válido, listo para enviar.');
+        }
       });
     });
   </script>
