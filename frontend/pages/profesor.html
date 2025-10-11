@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Profesor</title>
+    <!-- Guardia de autenticación -->
+    <script src="../js/auth-guard.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/styles.css">
 </head>
@@ -39,8 +41,9 @@
             </li>
           </ul>
         </nav>
-        <button id="btnLogin" class="btn btn-acento" data-bs-toggle="modal" data-bs-target="#loginModal">
-          Iniciar sesión
+        <!-- Botón de cierre de sesión -->
+        <button id="btnLogout" class="btn btn-danger">
+          Cerrar sesión
         </button>
     </div>
   </header>
@@ -53,61 +56,61 @@
       <form id="formRegistroProfesor" novalidate>
         <div class="mb-3">
           <label for="profesorNombre" class="form-label">👤 Nombre</label>
-          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre">
+          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre"> <!-- minlength="2" maxlength="100" -->
           <div class="invalid-feedback">El nombre es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorApellido" class="form-label">📝 Apellido</label>
-          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido">
+          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido"> <!-- minlength="2" maxlength="100" -->
           <div class="invalid-feedback">El apellido es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEmail" class="form-label">📧 Email</label>
-          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email">
+          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email"> <!-- maxlength="100" -->
           <div class="invalid-feedback">Ingresa un email válido.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTelefono" class="form-label">📱 Teléfono</label>
-          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono">
+          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono"> <!-- minlength="7" maxlength="20" -->
           <div class="invalid-feedback">El teléfono es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-          <input type="date" class="form-control" id="profesorFechaNacimiento">
+          <input type="date" class="form-control" id="profesorFechaNacimiento"> <!-- No aplica -->
           <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEspecialidad" class="form-label">🧩 Especialidad</label>
-          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad">
+          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad"> <!-- maxlength="100" -->
           <div class="invalid-feedback">La especialidad es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTitulo" class="form-label">🎓 Título</label>
-          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título">
+          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título"> <!-- maxlength="100" -->
           <div class="invalid-feedback">El título es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorDepartamento" class="form-label">🏢 Departamento</label>
-          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento">
+          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento"> <!-- maxlength="100" -->
           <div class="invalid-feedback">El departamento es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorCategoria" class="form-label">💼 Categoría</label>
-          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría">
+          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría"> <!-- maxlength="50" -->
           <div class="invalid-feedback">La categoría es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaContrato" class="form-label">📅 Fecha de Contrato</label>
-          <input type="date" class="form-control" id="profesorFechaContrato">
+          <input type="date" class="form-control" id="profesorFechaContrato"> <!-- No aplica -->
           <div class="invalid-feedback">La fecha de contrato es obligatoria.</div>
         </div>
 
@@ -121,33 +124,16 @@
     <p>© 2025 – Todos los derechos reservados</p>
   </footer>
 
-  <!-- MODAL LOGIN -->
-  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="loginModalLabel">Iniciar sesión</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="mb-3">
-              <label for="emailLogin" class="form-label">Correo electrónico</label>
-              <input type="email" class="form-control" id="emailLogin" placeholder="ejemplo@correo.com" required>
-            </div>
-            <div class="mb-3">
-              <label for="passwordLogin" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="passwordLogin" placeholder="********" required>
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    // Lógica para cerrar sesión
+    document.getElementById('btnLogout').addEventListener('click', function() {
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('userEmail');
+      window.location.href = '../login.html';
+    });
+
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('formRegistroProfesor');
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
