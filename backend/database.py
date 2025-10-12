@@ -1,51 +1,54 @@
-# database.py
+
 import mysql.connector
 from config import DB_CONFIG
 
+
 class Database:
     def __init__(self):
-        self.conn = None
-        self.cursor = None
+        self._conn = None
+        self._cursor = None
 
     def connect(self):
         try:
-            self.conn = mysql.connector.connect(**DB_CONFIG)
-            self.cursor = self.conn.cursor(dictionary=True)  # Devuelve diccionarios en vez de tuplas
+            self._conn = mysql.connector.connect(**DB_CONFIG)
+            self._cursor = self._conn.cursor(dictionary=True)
             print("Conexión a la base de datos exitosa.")
         except mysql.connector.Error as err:
             print(f"Error de conexión a la base de datos: {err}")
-            self.conn = None
-            self.cursor = None
+            self._conn = None
+            self._cursor = None
 
     def disconnect(self):
-        if self.conn and self.conn.is_connected():
-            self.cursor.close()
-            self.conn.close()
+        if self._conn and self._conn.is_connected():
+            self._cursor.close()
+            self._conn.close()
             print("Conexión a la base de datos cerrada.")
+
+    def _ensure(self):
+        if not self._conn or not self._conn.is_connected():
+            self.connect()
 
     def query(self, sql, params=None):
         try:
-            if not self.conn or not self.conn.is_connected():
-                self.connect()
-            self.cursor.execute(sql, params)
-            return self.cursor.fetchall()  # Retorna todas las filas como diccionarios
+            self._ensure()
+            self._cursor.execute(sql, params)
+            return self._cursor.fetchall()
         except mysql.connector.Error as err:
             print(f"Error al ejecutar la consulta: {err}")
             return None
 
     def execute(self, sql, params=None):
         try:
-            if not self.conn or not self.conn.is_connected():
-                self.connect()
-            self.cursor.execute(sql, params)
-            self.conn.commit()  # Confirma los cambios realizados
-            return self.cursor.rowcount  # Devuelve el número de filas afectadas
+            self._ensure()
+            self._cursor.execute(sql, params)
+            self._conn.commit()
+            return self._cursor.rowcount
         except mysql.connector.Error as err:
             print(f"Error al ejecutar la operación: {err}")
-            self.conn.rollback()  # Revierte los cambios si hay un error
+            self._conn.rollback()
             return 0
+
     def last_insert_id(self):
-        if self.cursor:
-            return self.cursor.lastrowid
-        else:
-            return None
+        if self._cursor:
+            return self._cursor.lastrowid
+        return None
