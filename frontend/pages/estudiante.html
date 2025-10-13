@@ -1,59 +1,185 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro de Alumno</title>
+    <!-- Guardia de autenticación -->
+    <script src="../js/auth-guard.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" href="../assets/img/favicon.webp" type="image/webp">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    <H1>Formulario de registro de Alumno</H1>
-
-<div class="card p-4 mb-4" style="max-width: 600px; margin: auto;">
-  <h2 class="text-center mb-4">🧑‍🎓 Registro de Alumno</h2>
-  
-  <form>
-    <div class="mb-3">
-      <label for="alumnoNombre" class="form-label">👤 Nombre</label>
-      <input type="text" class="form-control" id="alumnoNombre" placeholder="Ingresa tu nombre">
+<body class="d-flex flex-column min-vh-100">
+  <!-- Header -->
+  <header class="header-principal py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="../index.html" class="d-flex align-items-center text-decoration-none">
+        <img src="../assets/img/logo-EduPortal.webp" 
+         alt="Logo EduPortal" 
+         class="img-fluid" 
+         style="height: 120px; width: auto;">
+       </a>
+      <nav>
+          <ul class="nav">
+            <li class="nav-item">
+              <a href="../index.html" class="nav-link text-white">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a href="./cursos.html" class="nav-link text-white">Cursos</a>
+            </li>
+            <li class="nav-item">
+              <a href="./estudiante.html" class="nav-link text-white">Estudiantes</a>
+            </li>
+            <li class="nav-item">
+              <a href="./profesor.html" class="nav-link text-white">Profesores</a>
+            </li>
+            <li class="nav-item">
+              <a href="./sobre-nosotros.html" class="nav-link text-white">Sobre Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a href="./contacto.html" class="nav-link text-white">Contacto</a>
+            </li>
+          </ul>
+        </nav>
+        <!-- Botón de cierre de sesión -->
+        <button id="btnLogout" class="btn btn-danger">
+          Cerrar sesión
+        </button>
     </div>
+  </header>
 
-    <div class="mb-3">
-      <label for="alumnoApellido" class="form-label">📝 Apellido</label>
-      <input type="text" class="form-control" id="alumnoApellido" placeholder="Ingresa tu apellido">
+  <!-- Main -->
+  <main class="container my-5 flex-grow-1">
+    <div class="card p-4 mb-4" style="max-width: 600px; margin: auto;">
+      <h2 class="text-center mb-4">🧑‍🎓 Registro de Alumno</h2>
+      
+      <form id="formRegistroAlumno" novalidate>
+        <div class="mb-3">
+          <label for="alumnoNombre" class="form-label">👤 Nombre</label>
+          <input type="text" class="form-control" id="alumnoNombre" placeholder="Ingresa tu nombre"  minlength="3" maxlength="30">
+          <div class="invalid-feedback">El nombre es obligatorio.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoApellido" class="form-label">📝 Apellido</label>
+          <input type="text" class="form-control" id="alumnoApellido" placeholder="Ingresa tu apellido"  minlength="3" maxlength="30">
+          <div class="invalid-feedback">El apellido es obligatorio.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoEmail" class="form-label">📧 Email</label>
+          <input type="email" class="form-control" id="alumnoEmail" placeholder="Ingresa tu email" maxlength="30">
+          <div class="invalid-feedback">Ingresa un email válido.</div>!
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoTelefono" class="form-label">📱 Teléfono</label>
+          <input type="tel" class="form-control" id="alumnoTelefono" placeholder="Ingresa tu teléfono" minlength="3" maxlength="30" >
+          <div class="invalid-feedback">El teléfono es obligatorio.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
+          <input type="date" class="form-control" id="alumnoFechaNacimiento">
+          <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoMatricula" class="form-label">🆔 Matrícula</label>
+          <input type="text" class="form-control" id="alumnoMatricula" placeholder="Ingresa tu matrícula" maxlength="30>
+          <div class="invalid-feedback">La matrícula es obligatoria.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoCarrera" class="form-label">🎓 Carrera</label>
+          <input type="text" class="form-control" id="alumnoCarrera" placeholder="Ingresa tu carrera">
+          <div class="invalid-feedback">La carrera es obligatoria.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="alumnoSemestre" class="form-label">📘 Semestre</label>
+          <input type="number" class="form-control" id="alumnoSemestre" placeholder="Ingresa tu semestre"> < min="1"  max="12", >
+          <div class="invalid-feedback">Ingresa un número de semestre válido (mayor a 0).</div>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">✅ Registrar Alumno</button>
+      </form>
     </div>
+  </main>
 
-    <div class="mb-3">
-      <label for="alumnoEmail" class="form-label">📧 Email</label>
-      <input type="email" class="form-control" id="alumnoEmail" placeholder="Ingresa tu email">
-    </div>
+  <!-- Footer -->
+  <footer class="footer-principal text-center py-3">
+    <p>© 2025 – Todos los derechos reservados</p>
+  </footer>
 
-    <div class="mb-3">
-      <label for="alumnoTelefono" class="form-label">📱 Teléfono</label>
-      <input type="tel" class="form-control" id="alumnoTelefono" placeholder="Ingresa tu teléfono">
-    </div>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Lógica para cerrar sesión
+    document.getElementById('btnLogout').addEventListener('click', function() {
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('userEmail');
+      window.location.href = '../login.html';
+    });
 
-    <div class="mb-3">
-      <label for="alumnoFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-      <input type="date" class="form-control" id="alumnoFechaNacimiento">
-    </div>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('formRegistroAlumno');
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    <div class="mb-3">
-      <label for="alumnoMatricula" class="form-label">🆔 Matrícula</label>
-      <input type="text" class="form-control" id="alumnoMatricula" placeholder="Ingresa tu matrícula">
-    </div>
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-    <div class="mb-3">
-      <label for="alumnoCarrera" class="form-label">🎓 Carrera</label>
-      <input type="text" class="form-control" id="alumnoCarrera" placeholder="Ingresa tu carrera">
-    </div>
+        let isValid = true;
 
-    <div class="mb-3">
-      <label for="alumnoSemestre" class="form-label">📘 Semestre</label>
-      <input type="number" class="form-control" id="alumnoSemestre" placeholder="Ingresa tu semestre">
-    </div>
+        // Función para validar un campo de texto simple
+        const validateField = (field) => {
+          field.classList.remove('is-valid', 'is-invalid');
+          if (field.value.trim() === '') {
+            field.classList.add('is-invalid');
+            return false;
+          }
+          field.classList.add('is-valid');
+          return true;
+        };
 
-    <button type="submit" class="btn btn-primary w-100">✅ Registrar Alumno</button>
-  </form>
-</div>
+        // Validar todos los campos
+        isValid = validateField(document.getElementById('alumnoNombre')) && isValid;
+        isValid = validateField(document.getElementById('alumnoApellido')) && isValid;
+        isValid = validateField(document.getElementById('alumnoTelefono')) && isValid;
+        isValid = validateField(document.getElementById('alumnoMatricula')) && isValid;
+        isValid = validateField(document.getElementById('alumnoCarrera')) && isValid;
+
+        // Validación de Fecha de Nacimiento
+        const fechaNacimientoField = document.getElementById('alumnoFechaNacimiento');
+        const fechaNacimientoFeedback = fechaNacimientoField.nextElementSibling;
+        if (!validateField(fechaNacimientoField)) {
+            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento es obligatoria.';
+            isValid = false;
+        } else if (new Date(fechaNacimientoField.value) > new Date()) {
+            fechaNacimientoField.classList.remove('is-valid');
+            fechaNacimientoField.classList.add('is-invalid');
+            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento no puede ser futura.';
+            isValid = false;
+        }
+
+        // Validación de Email
+        const emailField = document.getElementById('alumnoEmail');
+        isValid = emailRegex.test(emailField.value) ? validateField(emailField) && isValid : (emailField.classList.add('is-invalid'), false);
+
+        // Validación de Semestre
+        const semestreField = document.getElementById('alumnoSemestre');
+        isValid = (semestreField.value > 0) ? validateField(semestreField) && isValid : (semestreField.classList.add('is-invalid'), false);
+
+        if (isValid) {
+          console.log("Formulario de alumno es válido. Listo para enviar.");
+          // Aquí iría la lógica para enviar el formulario (fetch, etc.)
+          // form.submit(); // Si quisieras hacer un envío tradicional
+        }
+      }, false);
+    });
+  </script>
 </body>
 </html>

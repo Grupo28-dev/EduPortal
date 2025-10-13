@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Git y GitHub</title>
+        <!-- Favicon -->
+        <link rel="icon" href="../assets/img/favicon.webp" type="image/webp">
+        <script src="../js/auth-guard.js"></script>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    </head>
+
+    <body class="d-flex flex-column min-vh-100">
+        <header class="header-principal py-3">
+            <div class="container d-flex justify-content-between align-items-center">
+                <a href="../index.html" class="d-flex align-items-center text-decoration-none"> <img
+                        src="../assets/img/logo-EduPortal.webp" alt="Logo EduPortal" class="img-fluid"
+                        style="height: 120px; width: auto;"> </a>
+                <nav>
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link text-white">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./cursos.html" class="nav-link text-white">Cursos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./estudiante.html" class="nav-link text-white">Estudiantes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./profesor.html" class="nav-link text-white">Profesores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./sobre-nosotros.html" class="nav-link text-white">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="./contacto.html" class="nav-link text-white">Contacto</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- Botón de cierre de sesión -->
+                <button id="btnLogout" class="btn btn-danger">
+                    Cerrar sesión
+                </button>
+            </div>
+        </header>
+
+        <main class="container my-4 flex-grow-1">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold">Git y GitHub</h2>
+                    <p class="lead">Flujos de versionado, ramas y colaboración profesional.</p>
+
+                    <section class="mb-4">
+                        <h5>¿Qué vas a lograr?</h5>
+                        <ul>
+                            <li>Versionar proyectos con Git desde la línea de comandos.</li>
+                            <li>Trabajar con ramas, merges y resolución de conflictos.</li>
+                            <li>Hacer Pull Requests y code reviews en GitHub.</li>
+                        </ul>
+                    </section>
+
+                    <section class="mb-4">
+                        <h5>Programa</h5>
+                        <ol>
+                            <li>Git básico y buenas prácticas.</li>
+                            <li>Ramas, merges y estrategias de branching.</li>
+                            <li>PRs, issues y GitHub Flow.</li>
+                            <li>Proyecto colaborativo con PRs.</li>
+                        </ol>
+                    </section>
+
+                    <section class="mb-4">
+                        <h5>Requisitos</h5>
+                        <p>Nociones básicas de terminal. Recomendado: conocimientos introductorios de programación.</p>
+                    </section>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <img src="../assets/img/github.webp" class="card-img-top" alt="Git y GitHub">
+                        <div class="card-body">
+                            <div class="d-flex flex-wrap gap-2 mb-2">
+                                <span class="badge text-bg-primary">Nivel: Inicial</span>
+                                <span class="badge text-bg-secondary">On‑Demand</span>
+                            </div>
+                            <ul class="list-group list-group-flush mb-3">
+                                <li class="list-group-item">Duración: 4 semanas (10 h)</li>
+                                <li class="list-group-item">Formato: video + prácticas</li>
+                                <li class="list-group-item">Certificado al completar</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary w-100">Inscribirme</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="bg-dark text-white text-center py-3">© 2025 – Todos los derechos reservados</footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            // Lógica para cerrar sesión
+            document.getElementById('btnLogout').addEventListener('click', function () {
+                sessionStorage.removeItem('isLoggedIn');
+                sessionStorage.removeItem('userEmail');
+                window.location.href = '../login.html';
+            });
+        </script>
+    </body>
+
+</html>
