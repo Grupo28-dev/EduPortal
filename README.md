@@ -55,4 +55,16 @@ $ git checkout -b rama-funcionalidad  # 🌱 Crea nueva rama
 $ git commit -m "Descripción del cambio"  # 💾 Guarda cambios
 $ git push origin rama-funcionalidad  # ⬆️ Sube rama
 
+
+
+👥 INTEGRANTES DEL EQUIPO:
+Actualizacion de integrantes del grupo
+
+👩 Andrea Jimena Del Valle Palma
+👩 Guadalupe Aravena
+👦 Danilo Oviedo
+👦 Nahuel Cufre
+
+
+
 🧪 🧠 Sistema educativo inclusivo, legal, y centrado en derechos fundamentales
