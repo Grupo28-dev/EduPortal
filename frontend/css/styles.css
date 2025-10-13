@@ -99,3 +99,16 @@ footer {
 .footer-principal p {
     margin: 0;
 }
+
+/* ==================
+   MODAL LOGIN
+   ================== */
+.login-card {
+    background-color: #032b57;
+    color:#ffffff;
+}
+
+/* CSS para el text muted, con !important para sobreescribir el text muted de bootstrap */
+.login-card .text-muted {
+    color: #e9ecef !important; 
+}
