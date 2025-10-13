@@ -59,7 +59,7 @@
       <form id="contactForm" action="https://formsubmit.co/andreajimenapalma@gmail.com" method="POST" novalidate>
         <div class="mb-3">
           <label for="name" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez"> <!-- minlength="2" maxlength="100" -->
+          <input type="text" class="form-control" id="name" placeholder="Ej: Juan Pérez"minlength="3" maxlength="30" >
           <div class="invalid-feedback">
             Por favor, ingresa tu nombre.
           </div>
@@ -68,7 +68,7 @@
 
         <div class="mb-3">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="Ej: juan.perez@correo.com"> <!-- maxlength="100" -->
+          <input type="email" class="form-control" id="email" placeholder="Ej: juan.perez@correo.com" maxlength="30" >
           <div class="invalid-feedback">
             Por favor, ingresa un correo electrónico válido.
           </div>
@@ -77,7 +77,7 @@
 
         <div class="mb-3">
           <label for="message" class="form-label">Tu consulta</label>
-          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta aquí..."></textarea> <!-- minlength="10" maxlength="1000" -->
+          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu consulta aquí..."></textarea  minlength="3" maxlength="30" >
           <div class="invalid-feedback">
             Por favor, escribe tu consulta.
           </div>

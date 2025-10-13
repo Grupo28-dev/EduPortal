@@ -56,37 +56,37 @@
       <form id="formRegistroAlumno" novalidate>
         <div class="mb-3">
           <label for="alumnoNombre" class="form-label">👤 Nombre</label>
-          <input type="text" class="form-control" id="alumnoNombre" placeholder="Ingresa tu nombre"> <!-- minlength="2" maxlength="100" -->
+          <input type="text" class="form-control" id="alumnoNombre" placeholder="Ingresa tu nombre"  minlength="3" maxlength="30">
           <div class="invalid-feedback">El nombre es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="alumnoApellido" class="form-label">📝 Apellido</label>
-          <input type="text" class="form-control" id="alumnoApellido" placeholder="Ingresa tu apellido"> <!-- minlength="2" maxlength="100" -->
+          <input type="text" class="form-control" id="alumnoApellido" placeholder="Ingresa tu apellido"  minlength="3" maxlength="30">
           <div class="invalid-feedback">El apellido es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="alumnoEmail" class="form-label">📧 Email</label>
-          <input type="email" class="form-control" id="alumnoEmail" placeholder="Ingresa tu email"> <!-- maxlength="100" -->
-          <div class="invalid-feedback">Ingresa un email válido.</div>
+          <input type="email" class="form-control" id="alumnoEmail" placeholder="Ingresa tu email" maxlength="30">
+          <div class="invalid-feedback">Ingresa un email válido.</div>!
         </div>
 
         <div class="mb-3">
           <label for="alumnoTelefono" class="form-label">📱 Teléfono</label>
-          <input type="tel" class="form-control" id="alumnoTelefono" placeholder="Ingresa tu teléfono"> <!-- minlength="7" maxlength="20" -->
+          <input type="tel" class="form-control" id="alumnoTelefono" placeholder="Ingresa tu teléfono" minlength="3" maxlength="30" >
           <div class="invalid-feedback">El teléfono es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="alumnoFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-          <input type="date" class="form-control" id="alumnoFechaNacimiento"> <!-- minlength y maxlength no aplican a campos de tipo 'date' -->
+          <input type="date" class="form-control" id="alumnoFechaNacimiento">
           <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="alumnoMatricula" class="form-label">🆔 Matrícula</label>
-          <input type="text" class="form-control" id="alumnoMatricula" placeholder="Ingresa tu matrícula"> <!-- maxlength="50" -->
+          <input type="text" class="form-control" id="alumnoMatricula" placeholder="Ingresa tu matrícula" maxlength="30>
           <div class="invalid-feedback">La matrícula es obligatoria.</div>
         </div>
 
@@ -98,7 +98,7 @@
 
         <div class="mb-3">
           <label for="alumnoSemestre" class="form-label">📘 Semestre</label>
-          <input type="number" class="form-control" id="alumnoSemestre" placeholder="Ingresa tu semestre"> <!-- Para 'number', se usan los atributos min="1" y max="12", no minlength/maxlength -->
+          <input type="number" class="form-control" id="alumnoSemestre" placeholder="Ingresa tu semestre"> < min="1"  max="12", >
           <div class="invalid-feedback">Ingresa un número de semestre válido (mayor a 0).</div>
         </div>
 
