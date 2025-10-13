@@ -65,6 +65,26 @@ Actualizacion de integrantes del grupo
 👦 Danilo Oviedo
 👦 Nahuel Cufre
 
+Funcionalidades actuales: 
+
+✅ Pagina inicio: Acceso a oferta comercial: Cursos disponibles
+📚 Pagina de presentación: Presentación del proyecto 
+👩‍🏫 Comercialización según estatuto legal
+♿ Plataforma accesible (Ley 26.653)
+📣 Canal de contacto: Acceso a contacto via email 
+
+🛠️Recursos utilizados:
+
+Gestión de Proyecto 
+💻 Frontend:
+
+Producción del  sitio web navegable con estructura HTML
+Semántica, estilos CSS
+Bootstrap
+
+💻 Backend: 
+
+
 
 
 🧪 🧠 Sistema educativo inclusivo, legal, y centrado en derechos fundamentales
