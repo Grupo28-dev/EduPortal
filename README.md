@@ -76,14 +76,19 @@ Funcionalidades actuales:
 🛠️Recursos utilizados:
 
 Gestión de Proyecto 
-💻 Frontend:
+💻 Frontend / Backend: :
 
 Producción del  sitio web navegable con estructura HTML
 Semántica, estilos CSS
 Bootstrap
 
-💻 Backend: 
+ 
+🔐Datos de acceso:
 
+https://eduportal.devlabstudio.net/login.html
+
+usuario: admin@eduportal.com
+clave: admin123
 
 
 
