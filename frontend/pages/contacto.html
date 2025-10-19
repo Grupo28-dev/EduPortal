@@ -123,14 +123,8 @@
     </div>
   </div>
   <!-- Script: espera a que cargue el DOM -->
+  <script src="../js/main.js"></script>
   <script>
-    // Lógica para cerrar sesión
-    document.getElementById('btnLogout').addEventListener('click', function() {
-      sessionStorage.removeItem('isLoggedIn');
-      sessionStorage.removeItem('userEmail');
-      window.location.href = '../login.html';
-    });
-
     document.addEventListener("DOMContentLoaded", function() {
       const contactForm = document.getElementById('contactForm');
      

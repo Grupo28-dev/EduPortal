@@ -1,4 +1,7 @@
- const btnCursos = document.getElementById("btnCursos");
+
+
+
+const btnCursos = document.getElementById("btnCursos");
     const btnProfesores = document.getElementById("btnProfesores");
     const cursosSection = document.getElementById("cursosSection");
     const profesoresSection = document.getElementById("profesoresSection");
@@ -12,3 +15,10 @@
       profesoresSection.classList.remove("d-none");
       cursosSection.classList.add("d-none");
     });
+
+// Logout
+document.getElementById('btnLogout').addEventListener('click', function () {
+  sessionStorage.removeItem('isLoggedIn');
+  sessionStorage.removeItem('userEmail');
+  window.location.href = 'login.html';
+});

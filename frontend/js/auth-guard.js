@@ -1,4 +1,4 @@
-// auth-guard.js
+
 
 // Verifica si el usuario ha iniciado sesión.
 // Si no, lo redirige a la página de login.
