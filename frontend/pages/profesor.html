@@ -140,56 +140,6 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script>
-    // Validación del Formulario
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('formRegistroProfesor');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        let isValid = true;
-
-        const validateField = (field) => {
-          field.classList.remove('is-valid', 'is-invalid');
-          if (field.value.trim() === '') {
-            field.classList.add('is-invalid');
-            return false;
-          }
-          field.classList.add('is-valid');
-          return true;
-        };
-
-        const validateDateField = (field, feedbackElement) => {
-            if (!validateField(field)) {
-                feedbackElement.textContent = `El campo es obligatorio.`;
-                return false;
-            } else if (new Date(field.value) > new Date()) {
-                field.classList.remove('is-valid');
-                field.classList.add('is-invalid');
-                feedbackElement.textContent = `La fecha no puede ser futura.`;
-                return false;
-            }
-            return true;
-        };
-
-        const fieldsToValidate = ['profesorNombre', 'profesorApellido', 'profesorTelefono', 'profesorEspecialidad', 'profesorTitulo', 'profesorDepartamento', 'profesorCategoria'];
-        fieldsToValidate.forEach(id => { isValid = validateField(document.getElementById(id)) && isValid; });
-
-        isValid = validateDateField(document.getElementById('profesorFechaNacimiento'), document.getElementById('profesorFechaNacimiento').nextElementSibling) && isValid;
-        isValid = validateDateField(document.getElementById('profesorFechaContrato'), document.getElementById('profesorFechaContrato').nextElementSibling) && isValid;
-
-        const emailField = document.getElementById('profesorEmail');
-        isValid = emailRegex.test(emailField.value) ? validateField(emailField) && isValid : (emailField.classList.add('is-invalid'), false);
-
-        if (isValid) {
-            console.log("Formulario de profesor es válido. Listo para enviar.");
-        }
-      }, false);
-    });
-  </script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

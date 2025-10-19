@@ -128,65 +128,6 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="./js/main.js"></script>
-  <script>
-    // Validación del Formulario
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('formRegistroAlumno');
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-
-        let isValid = true;
-
-        // Función para validar un campo de texto simple
-        const validateField = (field) => {
-          field.classList.remove('is-valid', 'is-invalid');
-          if (field.value.trim() === '') {
-            field.classList.add('is-invalid');
-            return false;
-          }
-          field.classList.add('is-valid');
-          return true;
-        };
-
-        // Validar todos los campos
-        isValid = validateField(document.getElementById('alumnoNombre')) && isValid;
-        isValid = validateField(document.getElementById('alumnoApellido')) && isValid;
-        isValid = validateField(document.getElementById('alumnoTelefono')) && isValid;
-        isValid = validateField(document.getElementById('alumnoMatricula')) && isValid;
-        isValid = validateField(document.getElementById('alumnoCarrera')) && isValid;
-
-        // Validación de Fecha de Nacimiento
-        const fechaNacimientoField = document.getElementById('alumnoFechaNacimiento');
-        const fechaNacimientoFeedback = fechaNacimientoField.nextElementSibling;
-        if (!validateField(fechaNacimientoField)) {
-            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento es obligatoria.';
-            isValid = false;
-        } else if (new Date(fechaNacimientoField.value) > new Date()) {
-            fechaNacimientoField.classList.remove('is-valid');
-            fechaNacimientoField.classList.add('is-invalid');
-            fechaNacimientoFeedback.textContent = 'La fecha de nacimiento no puede ser futura.';
-            isValid = false;
-        }
-
-        // Validación de Email
-        const emailField = document.getElementById('alumnoEmail');
-        isValid = emailRegex.test(emailField.value) ? validateField(emailField) && isValid : (emailField.classList.add('is-invalid'), false);
-
-        // Validación de Semestre
-        const semestreField = document.getElementById('alumnoSemestre');
-        isValid = (semestreField.value > 0) ? validateField(semestreField) && isValid : (semestreField.classList.add('is-invalid'), false);
-
-        if (isValid) {
-          console.log("Formulario de alumno es válido. Listo para enviar.");
-          // Aquí iría la lógica para enviar el formulario (fetch, etc.)
-          // form.submit(); // Si quisieras hacer un envío tradicional
-        }
-      }, false);
-    });
-  </script>
+  <script src="../js/main.js"></script>
 </body>
 </html>
