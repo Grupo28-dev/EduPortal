@@ -22,13 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Logout
   const btnLogout = document.getElementById('btnLogout');
-  if (btnLogout) {
-    btnLogout.addEventListener('click', function () {
-      sessionStorage.removeItem('isLoggedIn');
-      sessionStorage.removeItem('userEmail');
-      window.location.href = './login.html';
-      window.location.href = '../login.html';  // Redirige a la página de login
-    });
+  if (btnLogout) {   //NUEVO: Script de logout (verificación de sesiones)
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+      // Si el usuario está logueado, el logout es visible y funciona
+      btnLogout.style.display = 'block'; 
+      btnLogout.addEventListener('click', function () {
+        sessionStorage.removeItem('isLoggedIn');
+        // Se borran los datos guardados en caché de la sesión y redirigimos a login
+        window.location.href = window.location.pathname.includes('/pages/') ? '../login.html' : 'login.html';
+      });
+    } else {
+      // Si el usuario no está logueado, el botón no aparece
+      btnLogout.style.display = 'none';
+    }
   }
 
   // --- Registro Profesor ---
@@ -187,4 +193,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
