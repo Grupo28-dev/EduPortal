@@ -131,8 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       if (isValid) {
         console.log("Formulario de alumno es válido. Listo para enviar.");
-        // Aquí iría la lógica para enviar el formulario (fetch, etc.)
-        // form.submit(); // Si quisieras hacer un envío tradicional
+        // Como es estatica no hay lógica, simulamos el envio con un mensaje)
       }
     });
   }
@@ -182,7 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si todo es válido, oculta el formulario y muestra el mensaje
         contactForm.style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
-        // Aquí iría la lógica para enviar el formulario al backend
+        // // Como es estatica no hay lógica, simulamos el envio con un mensaje
         console.log('Formulario válido, listo para enviar.');
       }
     });
