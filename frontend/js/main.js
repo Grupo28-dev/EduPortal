@@ -20,6 +20,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+  // BOTÓN LOGIN (INICIO SESION)
+  const btnLogin = document.getElementById('btnLogin');
+  if (btnLogin) {  //NUEVO: Script de login (verificación de sesiones)
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+      // Si el usuario está logueado, el botón se bloquea
+      btnLogin.style.display = 'none'; 
+    }
+  }
+
+
   // Logout
   const btnLogout = document.getElementById('btnLogout');
   if (btnLogout) {   //NUEVO: Script de logout (verificación de sesiones)
