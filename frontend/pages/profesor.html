@@ -83,65 +83,65 @@
       <form id="formRegistroProfesor" novalidate>
         <div class="mb-3">
           <label for="profesorNombre" class="form-label">👤 Nombre</label>
-          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre"minlength="3" maxlength="30">
+          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre"minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El nombre es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorApellido" class="form-label">📝 Apellido</label>
-          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido" minlength="3" maxlength="30">
+          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido" minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El apellido es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEmail" class="form-label">📧 Email</label>
-          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email" maxlength="30" >
+          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email" maxlength="30" required>
           <div class="invalid-feedback">Ingresa un email válido.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTelefono" class="form-label">📱 Teléfono</label>
-          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono"minlength="3" maxlength="30">
+          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono"minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El teléfono es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-          <input type="date" class="form-control" id="profesorFechaNacimiento"> 
+          <input type="date" class="form-control" id="profesorFechaNacimiento" required> 
           <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEspecialidad" class="form-label">🧩 Especialidad</label>
-          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad" maxlength="30">
+          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad" maxlength="30" required>
           <div class="invalid-feedback">La especialidad es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTitulo" class="form-label">🎓 Título</label>
-          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título" maxlength="30" >
+          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título" maxlength="30" required>
           <div class="invalid-feedback">El título es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorDepartamento" class="form-label">🏢 Departamento</label>
-          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento"maxlength="30">
+          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento"maxlength="30" required> 
           <div class="invalid-feedback">El departamento es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorCategoria" class="form-label">💼 Categoría</label>
-          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría" maxlength="30" >
+          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría" maxlength="30" required> 
           <div class="invalid-feedback">La categoría es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaContrato" class="form-label">📅 Fecha de Contrato</label>
-          <input type="date" class="form-control" id="profesorFechaContrato"> 
+          <input type="date" class="form-control" id="profesorFechaContrato" required> 
           <div class="invalid-feedback">La fecha de contrato es obligatoria.</div>
         </div>
 
-        <button type="button" id="btnRegistrarProfesor" class="btn btn-success w-100">✅ Registrar Profesor</button>
+        <button type="submit" id="btnRegistrarProfesor" class="btn btn-success w-100">✅ Registrar Profesor</button>
       </form>
     </div>
   </main>
