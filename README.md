@@ -1,29 +1,32 @@
 # EduPortal
 Plataforma E-learning
-🎓 EduPortal
 
-📌 TÍTULO DEL PROYECTO:
+EduPortal
+
+ TÍTULO DEL PROYECTO:
+ 
 EduPortal: Plataforma de Gestión Educativa Ética y Legal
 
-📝 DESCRIPCIÓN BREVE:
+ DESCRIPCIÓN BREVE:
+ 
 Plataforma digital educativa: El propósito del sistema de EduPortal es brindar una plataforma digital de gestión educativa que facilite el acceso diferenciado a información según el rol de cada usuario (alumno, docente o administrador). Buscar mejorar la organización académica y administrativa mediante procesos centralizados, seguros y fáciles de usar.
 
-📝 ALCANCE:
+ ALCANCE:
 
 Usuarios estándar (alumnos/docentes): podrán consultar sus datos personales, inscribirse en materias y acceder a calificaciones.
 Administradores: tendrán la capacidad de gestionar usuarios (altas, bajas modificaciones, cambio de roles), crear cursos, asignar docentes y generar reportes académicos.
 El sistema será inicialmente de uso interno, con posibilidad de expandirse a aplicación web accesible desde cualquier dispositivo.
 
-🚀 FUNCIONALIDADES INICIALES:
+FUNCIONALIDADES INICIALES:
 
 
-✅ Gestión segura de datos escolares
-📚 Biblioteca con control de derechos de autor
-👩‍🏫 Contratación docente según estatuto legal
-♿ Plataforma accesible (Ley 26.653)
-📣 Canal de denuncias y reclamos escolares
+* Gestión segura de datos escolares
+* Biblioteca con control de derechos de autor
+* Contratación docente según estatuto legal
+* Plataforma accesible (Ley 26.653)
+* Canal de denuncias y reclamos escolares
 
-👥 INTEGRANTES DEL EQUIPO:
+ INTEGRANTES DEL EQUIPO:
 
 👩 Melina Yangüez
 👩 Andrea Jimena Del Valle Palma
@@ -33,21 +36,22 @@ El sistema será inicialmente de uso interno, con posibilidad de expandirse a ap
 
 ➕ [Agregar más integrantes]
 
-🛠️ HABILIDADES TÉCNICAS:
+ HABILIDADES TÉCNICAS:
 
-💻 Desarrollo web (frontend/backend)
-⚖️ Derecho educativo aplicado a sistemas
-🎨 Diseño accesible UX/UI
-🔐 Seguridad en bases de datos
-⚖️ MARCO NORMATIVO LEGAL INTEGRADO
+* Desarrollo web (frontend/backend)
+* Derecho educativo aplicado a sistemas
+* Diseño accesible UX/UI
+* Seguridad en bases de datos
+* MARCO NORMATIVO LEGAL INTEGRADO
 
 📜 Ley 26.061 – Protección Integral de NNyA
-🔒 Ley 25.326 – Protección de Datos Personales
-♿ Ley 26.653 – Accesibilidad a la Información
-👩‍🏫 Ley 14.473 – Estatuto Docente
-🧠 [Opcional] Ley de Propiedad Intelectual
+ Ley 25.326 – Protección de Datos Personales
+ ley 26.653 – Accesibilidad a la Información
+ Ley 14.473 – Estatuto Docente
+ 
+ 🧠 [Opcional] Ley de Propiedad Intelectual
 
-🧪 COMANDOS DE GIT (para desarrollo)
+ COMANDOS DE GIT (para desarrollo)
 
 $ git init                             # 🚀 Inicializa un nuevo repo
 $ git clone <repositorio>             # 📥 Clona repositorio
@@ -60,22 +64,20 @@ $ git push origin rama-funcionalidad  # ⬆️ Sube rama
 👥 INTEGRANTES DEL EQUIPO:
 Actualizacion de integrantes del grupo
 
-👩 Andrea Jimena Del Valle Palma
-👩 Guadalupe Aravena
-👦 Danilo Oviedo
-👦 Nahuel Cufre
+👩 Melina Yangüez ( abandona el proyecto)
 
 Funcionalidades actuales: 
 
-✅ Pagina inicio: Acceso a oferta comercial: Cursos disponibles
-📚 Pagina de presentación: Presentación del proyecto 
-👩‍🏫 Comercialización según estatuto legal
-♿ Plataforma accesible (Ley 26.653)
-📣 Canal de contacto: Acceso a contacto via email 
+* Pagina inicio: Acceso a oferta comercial: Cursos disponibles
+* Pagina de presentación: Presentación del proyecto 
+* Comercialización según estatuto legal
+* Plataforma accesible (Ley 26.653)
+* Canal de contacto: Acceso a contacto via email 
 
-🛠️Recursos utilizados:
+Recursos utilizados:
 
-Gestión de Proyecto 
+Gestión de Proyecto
+
 💻 Frontend / Backend: :
 
 Producción del  sitio web navegable con estructura HTML
@@ -90,6 +92,4 @@ https://eduportal.devlabstudio.net/login.html
 usuario: admin@eduportal.com
 clave: admin123
 
-
-
-🧪 🧠 Sistema educativo inclusivo, legal, y centrado en derechos fundamentales
+ Sistema educativo inclusivo, legal, y centrado en derechos fundamentales
