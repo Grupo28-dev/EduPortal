@@ -1,8 +1,6 @@
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Verificar si los botones existen antes de añadir los event listeners
+  // Verifica si los botones existen antes de añadir los event listeners
   const btnCursos = document.getElementById("btnCursos");
   const btnProfesores = document.getElementById("btnProfesores");
   const cursosSection = document.getElementById("cursosSection");
@@ -20,122 +18,99 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Logout
+  // ==================================================================
+  // GESTIÓN DE SESIÓN Y VISIBILIDAD DE BOTONES
+  // ==================================================================
+  const btnLogin = document.getElementById('btnLogin');
+  const btnRegistro = document.getElementById('btnRegistro'); // Botón dropdown de registro
   const btnLogout = document.getElementById('btnLogout');
-  if (btnLogout) {
-    btnLogout.addEventListener('click', function () {
-      sessionStorage.removeItem('isLoggedIn');
-      sessionStorage.removeItem('userEmail');
-      window.location.href = './login.html';
-      window.location.href = '../login.html';  // Redirige a la página de login
-    });
+
+  // Gestión de visibilidad de botones según el estado de sesión
+  if (sessionStorage.getItem('isLoggedIn') === 'true') {
+    if (btnLogin) btnLogin.style.display = 'none';
+    if (btnRegistro) btnRegistro.parentElement.style.display = 'none'; // Oculta el <li> que contiene el dropdown
+    if (btnLogout) btnLogout.style.display = 'block';
+
+    // Lógica de Logout 
+    if (btnLogout) {
+      btnLogout.addEventListener('click', function () {
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('userEmail');
+        // Redirigimos a login
+        window.location.href = window.location.pathname.includes('/pages/') ? '../login.html' : 'login.html';
+      });
+    }
+  } else {
+    // Si no está logueado, ocultar el botón de logout
+    if (btnLogout) btnLogout.style.display = 'none';
   }
 
-  // --- Registro Profesor ---
-  const formProfesor = document.getElementById('formRegistroProfesor');
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  // ==================================================================
+  // LÓGICA UNIFICADA DE VALIDACIÓN DE FORMULARIOS
+  // ==================================================================
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //Expresiones regulares para validar el mail
 
-  if (formProfesor) {
-    formProfesor.addEventListener('submit', function (event) {
+  const handleFormSubmit = (form) => {
+    if (!form) return;
+
+    form.addEventListener('submit', function (event) {
       event.preventDefault();
       event.stopPropagation();
 
       let isValid = true;
+      const fields = form.querySelectorAll('input, select');
 
-      const validateField = (field) => {
-        field.classList.remove('is-valid', 'is-invalid');
-        if (field.value.trim() === '') {
-          field.classList.add('is-invalid');
-          return false;
+      // Limpiar validaciones previas
+      fields.forEach(field => field.classList.remove('is-valid', 'is-invalid'));
+
+      // Validar cada campo
+      fields.forEach(field => {
+        let fieldIsValid = true;
+        const feedbackElement = field.nextElementSibling; // El field.nextElementSibling asume que el div de feedback está justo después (en nuestro código si, el feedback no-valid)
+
+        // 1. Validación de campo requerido
+        if (field.required && field.value.trim() === '') {
+          if (feedbackElement) feedbackElement.textContent = 'Este campo es obligatorio.';
+          fieldIsValid = false;
         }
-        field.classList.add('is-valid');
-        return true;
-      };
-
-      const validateDateField = (field, feedbackElement) => {
-        if (!validateField(field)) {
-          feedbackElement.textContent = `El campo es obligatorio.`;
-          return false;
-        } else if (new Date(field.value) > new Date()) {
-          field.classList.remove('is-valid');
-          field.classList.add('is-invalid');
-          feedbackElement.textContent = `La fecha no puede ser futura.`;
-          return false;
+        // 2. Validación de tipo email
+        else if (field.type === 'email' && !emailRegex.test(field.value)) {
+          if (feedbackElement) feedbackElement.textContent = 'Por favor, ingresa un correo electrónico válido.';
+          fieldIsValid = false;
         }
-        return true;
-      };
+        // 3. Validación de tipo date (no futura)
+        else if (field.type === 'date' && new Date(field.value) > new Date()) {
+          if (feedbackElement) feedbackElement.textContent = 'La fecha no puede ser futura.';
+          fieldIsValid = false;
+        }
+        // 4. Validación de número (semestre > 0)
+        else if (field.id === 'alumnoSemestre' && parseInt(field.value, 10) <= 0) {
+          if (feedbackElement) feedbackElement.textContent = 'El semestre debe ser un número positivo.';
+          fieldIsValid = false;
+        }
 
-      const fieldsToValidate = ['profesorNombre', 'profesorApellido', 'profesorTelefono', 'profesorEspecialidad', 'profesorTitulo', 'profesorDepartamento', 'profesorCategoria'];
-      fieldsToValidate.forEach(id => { isValid = validateField(document.getElementById(id)) && isValid; });
-
-      isValid = validateDateField(document.getElementById('profesorFechaNacimiento'), document.getElementById('profesorFechaNacimiento').nextElementSibling) && isValid;
-      isValid = validateDateField(document.getElementById('profesorFechaContrato'), document.getElementById('profesorFechaContrato').nextElementSibling) && isValid;
-
-      const emailField = document.getElementById('profesorEmail');
-      isValid = emailRegex.test(emailField.value) ? validateField(emailField) && isValid : (emailField.classList.add('is-invalid'), false);
+        // Aplicar clases de Bootstrap
+        if (fieldIsValid && field.value.trim() !== '') {
+          field.classList.add('is-valid');
+        } else if (!fieldIsValid) {
+          field.classList.add('is-invalid');
+          isValid = false; // Si un campo falla, todo el formulario es inválido
+        }
+      });
 
       if (isValid) {
-        console.log("Formulario de profesor es válido. Listo para enviar.");
+        alert('Se registró con éxito');
+        form.reset();
+        fields.forEach(field => field.classList.remove('is-valid', 'is-invalid'));
+      } else {
+        alert('Error: Por favor, corrija los campos marcados en rojo.');
       }
     });
-  }
+  };
 
-  // --- Registro  Alumno ---
-  const formAlumno = document.getElementById('formRegistroAlumno');
-
-  if (formAlumno) {
-    formAlumno.addEventListener('submit', function (event) {
-      event.preventDefault();
-      event.stopPropagation();
-
-      let isValid = true;
-
-      // Función para validar un campo de texto simple
-      const validateField = (field) => {
-        field.classList.remove('is-valid', 'is-invalid');
-        if (field.value.trim() === '') {
-          field.classList.add('is-invalid');
-          return false;
-        }
-        field.classList.add('is-valid');
-        return true;
-      };
-
-      // Validar todos los campos
-      isValid = validateField(document.getElementById('alumnoNombre')) && isValid;
-      isValid = validateField(document.getElementById('alumnoApellido')) && isValid;
-      isValid = validateField(document.getElementById('alumnoTelefono')) && isValid;
-      isValid = validateField(document.getElementById('alumnoMatricula')) && isValid;
-      isValid = validateField(document.getElementById('alumnoCarrera')) && isValid;
-
-      // Validación de Fecha de Nacimiento
-      const fechaNacimientoField = document.getElementById('alumnoFechaNacimiento');
-      const fechaNacimientoFeedback = fechaNacimientoField.nextElementSibling;
-      if (!validateField(fechaNacimientoField)) {
-        fechaNacimientoFeedback.textContent = 'La fecha de nacimiento es obligatoria.';
-        isValid = false;
-      } else if (new Date(fechaNacimientoField.value) > new Date()) {
-        fechaNacimientoField.classList.remove('is-valid');
-        fechaNacimientoField.classList.add('is-invalid');
-        fechaNacimientoFeedback.textContent = 'La fecha de nacimiento no puede ser futura.';
-        isValid = false;
-      }
-
-      // Validación de Email
-      const emailField = document.getElementById('alumnoEmail');
-      isValid = emailRegex.test(emailField.value) ? validateField(emailField) && isValid : (emailField.classList.add('is-invalid'), false);
-
-      // Validación de Semestre
-      const semestreField = document.getElementById('alumnoSemestre');
-      isValid = (semestreField.value > 0) ? validateField(semestreField) && isValid : (semestreField.classList.add('is-invalid'), false);
-
-      if (isValid) {
-        console.log("Formulario de alumno es válido. Listo para enviar.");
-        // Aquí iría la lógica para enviar el formulario (fetch, etc.)
-        // form.submit(); // Si quisieras hacer un envío tradicional
-      }
-    });
-  }
+  // Aplicar la lógica de validación a los formularios de registro
+  handleFormSubmit(document.getElementById('formRegistroProfesor')); //O sea, importamos la función creada mas arriba handleFormSubmit para que se aplique al realizar una busqueda por id que coincida con el parametro
+  handleFormSubmit(document.getElementById('formRegistroAlumno'));
 
   // ---  Formulario de Contacto ---
   const contactForm = document.getElementById('contactForm');
@@ -182,10 +157,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si todo es válido, oculta el formulario y muestra el mensaje
         contactForm.style.display = 'none';
         document.getElementById('thankYouMessage').style.display = 'block';
-        // Aquí iría la lógica para enviar el formulario al backend
+        // // Como es estatica no hay lógica, simulamos el envio con un mensaje. Aunque en pruebas no alcanza a mostrarse. Teorizamos que es por la carga casi instantanea del SMTP. Aunque para futuras integraciones de funcionalidades de respuesta debería funcionar
         console.log('Formulario válido, listo para enviar.');
       }
     });
   }
 });
-

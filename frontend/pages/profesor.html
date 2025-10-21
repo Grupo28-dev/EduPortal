@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Profesor</title>
-    <!-- Guardia de autenticación -->
-    <script src="../js/auth-guard.js"></script>
     <!-- Favicon -->
     <link rel="icon" href="../assets/img/favicon.webp" type="image/webp">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -17,7 +15,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
         <!-- Logo -->
-        <a href="./index.html" class="navbar-brand d-flex align-items-center">
+        <a href="../index.html" class="navbar-brand d-flex align-items-center">
           <img src="../assets/img/logo-EduPortal.webp" alt="Logo EduPortal" class="img-fluid"
             style="height: 80px; width: auto;">
         </a>
@@ -38,30 +36,45 @@
               <a href="./cursos.html" class="nav-link text-white">Cursos</a>
             </li>
             <li class="nav-item">
-              <a href="./estudiante.html" class="nav-link text-white">Estudiantes</a>
-            </li>
-            <li class="nav-item">
-              <a href="./profesor.html" class="nav-link text-white">Profesores</a>
-            </li>
-            <li class="nav-item">
               <a href="./sobre-nosotros.html" class="nav-link text-white">Sobre Nosotros</a>
             </li>
             <li class="nav-item">
               <a href="./contacto.html" class="nav-link text-white">Contacto</a>
             </li>
   
-            <!-- Botón de logout como parte del menú para mantener alineación -->
+  
+  
+            <!-- Boton de Login -->
             <li class="nav-item mt-3 mt-lg-0 ms-lg-3">
-              <button id="btnLogout" class="btn btn-danger w-100 w-lg-auto">
-                Cerrar sesión
+              <a href="../login.html" id="btnLogin" class="btn btn-primary w-100 w-lg-auto">Iniciar sesión</a>
+            </li>
+  
+  
+            <!-- Botón Registro con dropdown -->
+            <li class="nav-item dropdown mt-3 mt-lg-0 ms-lg-3">
+              <button class="btn btn-primary dropdown-toggle w-100 w-lg-auto" id="btnRegistro" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Registro
               </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnRegistro">
+                <li>
+                  <a class="dropdown-item" href="./profesor.html">Registrarse Profesor</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="./estudiante.html">Registrarse Estudiante</a>
+                </li>
+              </ul>
+            </li>
+  
+            <!-- Boton Logout -->
+            <li class="nav-item mt-3 mt-lg-0 ms-lg-3">
+              <button id="btnLogout" class="btn btn-danger w-100 w-lg-auto">Cerrar sesión</button>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
-
   <!-- Main -->
   <main class="container my-5 flex-grow-1">
     <div class="card p-4 mb-4" style="max-width: 600px; margin: auto;">
@@ -70,65 +83,65 @@
       <form id="formRegistroProfesor" novalidate>
         <div class="mb-3">
           <label for="profesorNombre" class="form-label">👤 Nombre</label>
-          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre"minlength="3" maxlength="30">
+          <input type="text" class="form-control" id="profesorNombre" placeholder="Ingresa tu nombre"minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El nombre es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorApellido" class="form-label">📝 Apellido</label>
-          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido" minlength="3" maxlength="30">
+          <input type="text" class="form-control" id="profesorApellido" placeholder="Ingresa tu apellido" minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El apellido es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEmail" class="form-label">📧 Email</label>
-          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email" maxlength="30" >
+          <input type="email" class="form-control" id="profesorEmail" placeholder="Ingresa tu email" maxlength="30" required>
           <div class="invalid-feedback">Ingresa un email válido.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTelefono" class="form-label">📱 Teléfono</label>
-          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono"minlength="3" maxlength="30">
+          <input type="tel" class="form-control" id="profesorTelefono" placeholder="Ingresa tu teléfono"minlength="3" maxlength="30" required>
           <div class="invalid-feedback">El teléfono es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaNacimiento" class="form-label">🗓️ Fecha de Nacimiento</label>
-          <input type="date" class="form-control" id="profesorFechaNacimiento"> 
+          <input type="date" class="form-control" id="profesorFechaNacimiento" required> 
           <div class="invalid-feedback">La fecha de nacimiento es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorEspecialidad" class="form-label">🧩 Especialidad</label>
-          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad" maxlength="30">
+          <input type="text" class="form-control" id="profesorEspecialidad" placeholder="Ingresa tu especialidad" maxlength="30" required>
           <div class="invalid-feedback">La especialidad es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorTitulo" class="form-label">🎓 Título</label>
-          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título" maxlength="30" >
+          <input type="text" class="form-control" id="profesorTitulo" placeholder="Ingresa tu título" maxlength="30" required>
           <div class="invalid-feedback">El título es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorDepartamento" class="form-label">🏢 Departamento</label>
-          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento"maxlength="30">
+          <input type="text" class="form-control" id="profesorDepartamento" placeholder="Ingresa tu departamento"maxlength="30" required> 
           <div class="invalid-feedback">El departamento es obligatorio.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorCategoria" class="form-label">💼 Categoría</label>
-          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría" maxlength="30" >
+          <input type="text" class="form-control" id="profesorCategoria" placeholder="Ingresa tu categoría" maxlength="30" required> 
           <div class="invalid-feedback">La categoría es obligatoria.</div>
         </div>
 
         <div class="mb-3">
           <label for="profesorFechaContrato" class="form-label">📅 Fecha de Contrato</label>
-          <input type="date" class="form-control" id="profesorFechaContrato"> 
+          <input type="date" class="form-control" id="profesorFechaContrato" required> 
           <div class="invalid-feedback">La fecha de contrato es obligatoria.</div>
         </div>
 
-        <button type="submit" class="btn btn-success w-100">✅ Registrar Profesor</button>
+        <button type="submit" id="btnRegistrarProfesor" class="btn btn-success w-100">✅ Registrar Profesor</button>
       </form>
     </div>
   </main>
