@@ -204,3 +204,67 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+document.getElementById('formRegistroAlumno').addEventListener('submit', function (event) {
+  event.preventDefault(); // Evitar envío tradicional del formulario
+
+  // Obtener los inputs del formulario
+  const nombre = document.getElementById('alumnoNombre').value.trim();
+  const apellido = document.getElementById('alumnoApellido').value.trim();
+  const email = document.getElementById('alumnoEmail').value.trim();
+  const telefono = document.getElementById('alumnoTelefono').value.trim();
+  const fechaNacimiento = document.getElementById('alumnoFechaNacimiento').value.trim();
+  const matricula = document.getElementById('alumnoMatricula').value.trim();
+  const carrera = document.getElementById('alumnoCarrera').value.trim();
+  const semestre = document.getElementById('alumnoSemestre').value.trim();
+
+  // Validar que ninguno esté vacío
+  if (!nombre || !apellido || !email || !telefono || !fechaNacimiento || !matricula || !carrera || !semestre) {
+    alert('Por favor, completa todos los campos obligatorios.');
+    return;
+  }
+
+  // Si pasó la validación mostrar el alert de éxito
+  alert('Se registró con éxito');
+
+  // Resetear el formulario
+  this.reset();
+});
+
+
+document.getElementById('btnRegistrarProfesor').addEventListener('click', function () {
+  const campos = [
+    { id: 'profesorNombre', nombre: 'Nombre' },
+    { id: 'profesorApellido', nombre: 'Apellido' },
+    { id: 'profesorEmail', nombre: 'Email' },
+    { id: 'profesorTelefono', nombre: 'Teléfono' },
+    { id: 'profesorFechaNacimiento', nombre: 'Fecha de Nacimiento' },
+    { id: 'profesorEspecialidad', nombre: 'Especialidad' },
+    { id: 'profesorTitulo', nombre: 'Título' },
+    { id: 'profesorDepartamento', nombre: 'Departamento' },
+    { id: 'profesorCategoria', nombre: 'Categoría' },
+    { id: 'profesorFechaContrato', nombre: 'Fecha de Contrato' }
+  ];
+
+  // Revisar si TODOS están vacíos
+  const todosVacios = campos.every(campo => !document.getElementById(campo.id).value.trim());
+
+  if (todosVacios) {
+    alert('Por favor, completa al menos un campo del formulario.');
+    return;
+  }
+
+  // Si no todos están vacíos, validar que ningún campo obligatorio esté vacío (o el que quieras)
+  for (let campo of campos) {
+    const valor = document.getElementById(campo.id).value.trim();
+    if (!valor) {
+      alert(`Por favor, completa el campo: ${campo.nombre}`);
+      document.getElementById(campo.id).focus();
+      return;
+    }
+  }
+
+  // Si pasa todas las validaciones
+  alert('Formulario completado correctamente');
+  document.getElementById('formRegistroProfesor').reset();
+});
